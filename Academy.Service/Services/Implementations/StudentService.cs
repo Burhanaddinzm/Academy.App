@@ -17,8 +17,8 @@ namespace Academy.Service.Services.Implementations
             if (string.IsNullOrWhiteSpace(group))
                 return "Group can not be empty!";
 
-            if (average <= 0)
-                return "Average can't be 0 or below";
+            if (average <= 0 || average >= 100)
+                return "Average can't be below 0 or above 100";
 
             Student student = new Student(fullName, group, average, education);
             student.CreatedAt = DateTime.UtcNow.AddHours(4);
@@ -59,7 +59,7 @@ namespace Academy.Service.Services.Implementations
             return "Removed successfully!";
         }
 
-        public async Task<string> UpdateAsync(string id,string fullName, string group, double average, StudentEducation education)
+        public async Task<string> UpdateAsync(string id, string fullName, string group, double average, StudentEducation education)
         {
             Student student = await _studentRepository.GetAsync(x => x.Id == id);
             if (student == null)
@@ -71,8 +71,8 @@ namespace Academy.Service.Services.Implementations
             if (string.IsNullOrWhiteSpace(group))
                 return "Group can not be empty!";
 
-            if (average <= 0)
-                return "Average can't be 0 or below";
+            if (average <= 0 || average >= 100)
+                return "Average can't be below 0 or above 100";
 
             student.FullName = fullName;
             student.Group = group;
