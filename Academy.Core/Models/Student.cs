@@ -20,7 +20,7 @@ namespace Academy.Core.Models
             Group = group;
             Average = average;
             Education = education;
-
+            //Converting enum to string for using in Id.
             string educationName = Education.ToString();
             Id = $"{educationName[0]}-{_id}";
         }

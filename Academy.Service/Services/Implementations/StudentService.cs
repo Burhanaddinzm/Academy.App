@@ -8,6 +8,14 @@ namespace Academy.Service.Services.Implementations
 {
     public class StudentService : IStudentService
     {
+        //Creating repo object. Downcasting?
+        //User inputs is taken from MenuService.
+        //GetAll takes values from StudentRepo and displays every object.
+        //Get takes the values from StudentRepo by Id.
+        //Remove takes the object from Get and removes them.
+        //Update takes the object from Get and updates them.
+        //Methods that have return string, returns the releated message.
+
         IStudentRepository _studentRepository = new StudentRepository();
         public async Task<string> CreateAsync(string fullName, string group, double average, StudentEducation education)
         {

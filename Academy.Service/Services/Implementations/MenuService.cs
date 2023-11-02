@@ -6,6 +6,14 @@ namespace Academy.Service.Services.Implementations
 {
     public class MenuService
     {
+        //Creating object from StudentSerivce.
+        //CreateStudent:
+        //Foreach takes every object from Enum and displays them using Enum.GetValues(typeof(Enum)).
+        //For failsaving Enum created bool isExsist = Enum.IsDefined(Enum,enum_object) put in a while loop.
+        //string result takes the message from studentSerive.Create().
+        //UpdateStudent:
+        //Mostly same as CreateStundent just takes Id and uses studentService.Update.
+        //The rest takes Id and runs the corresponding method.
         IStudentService studentService = new StudentService();
         public async Task RunApp()
         {
