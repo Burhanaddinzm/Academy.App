@@ -49,15 +49,16 @@ namespace Academy.Service.Services.Implementations
             string studentGroup = Console.ReadLine();
             Console.WriteLine("Add Average:");
             double.TryParse(Console.ReadLine(), out double average);
+
             int i = 1;
 
+            Console.WriteLine("Choose student's education:");
             foreach (var item in Enum.GetValues(typeof(StudentEducation)))
             {
                 Console.WriteLine($"{i}.{item}");
                 i++;
             }
 
-            Console.WriteLine("Choose student's education:");
             int.TryParse(Console.ReadLine(), out int enumIndex);
             bool isExsist = Enum.IsDefined(typeof(StudentEducation), (StudentEducation)enumIndex);
 
